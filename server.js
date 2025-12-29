@@ -13,8 +13,12 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/crazed")
-.then(()=>console.log("MongoDB Connected"));
+mongoose.connect(
+  "mongodb+srv://crazed_infinite:72Sa77ur67av@cluster0.yrolxj4.mongodb.net/?appName=Cluster0"
+)
+.then(()=>console.log("MongoDB Atlas Connected"))
+.catch(err=>console.log(err));
+
 
 // User model
 const User = mongoose.model("User", {
@@ -115,4 +119,5 @@ app.put("/short/like/:id", async (req, res) => {
   });
   res.json({ message: "Liked" });
 });
+
 
