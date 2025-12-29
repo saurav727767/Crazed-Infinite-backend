@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
 
-const Video = require("./models/video");
+const Video = require("./models/Video");
 const Short = require("./models/Short");
 const Poster = require("./models/Poster");
 
@@ -115,3 +115,4 @@ app.put("/short/like/:id", async (req, res) => {
   });
   res.json({ message: "Liked" });
 });
+
